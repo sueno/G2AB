@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <!--<script src="./jquery-1.9.0.min.js"></script>-->
+        <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.0.0.min.js"></script>
+
+		<script>
+		$(window).load(function(){
+		  $('div' + '.amebloGist').each(function(){
+		    var param = $(this).attr('id');
+		    if(param && param.match(/^[0-9]*$/)){
+            	var giturl = 'https://gist.github.com/'+param+'.json'
+	            $.ajax({
+	                url: giturl,
+	                type: 'GET',
+	                dataType: 'jsonp'
+	              }).success(function(gistdata) {
+                     var gistlink = document.createElement("link");
+	            	  gistlink.href = gistdata.stylesheet
+	            	  gistlink.media = "screen"
+	            	  gistlink.rel = "stylesheet"
+	                 document.head.appendChild(gistlink);
+          	 		 $('#'+param).html(gistdata.div)
+          	 		 
+	              }).error(function() {
+	            	 alert("error") 
+	              });
+		    }else{
+		      notice(param, "Illigal parameter.");
+		    }
+		  });
+		});
+		
+		</script>
+
+    </head>
+    <body>
+    
+    <div class="amebloGist" id="4682479"></div>
+    
+    </body>
+</html>
+
