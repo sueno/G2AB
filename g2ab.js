@@ -8,6 +8,7 @@ $(window).load(function(){
 	                type: 'GET',
 	                dataType: 'jsonp'
 	              }).success(function(gistdata) {
+	            	  alert(gistdata.div)
                      var gistlink = document.createElement("link");
 	            	  gistlink.href = gistdata.stylesheet
 	            	  gistlink.media = "screen"
