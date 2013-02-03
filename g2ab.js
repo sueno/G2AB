@@ -8,7 +8,7 @@ $(window).load(function(){
 	                type: 'GET',
 	                dataType: 'jsonp'
 	              }).success(function(gistdata) {
-	              	$('link',{
+	              	$('<link />',{
 	              		'media':'screen',
 	              		'rel':'stylesheet',
 	              		'href':gistdata.stylesheet
