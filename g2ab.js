@@ -8,13 +8,12 @@ $(window).load(function(){
 	                type: 'GET',
 	                dataType: 'jsonp'
 	              }).success(function(gistdata) {
-	            	  //alert(gistdata.div)
-                     var gistlink = document.createElement("link");
-	            	  gistlink.href = gistdata.stylesheet
-	            	  gistlink.media = "screen"
-	            	  gistlink.rel = "stylesheet"
-	                 document.head.appendChild(gistlink);
-          	 		 $('#'+param).html(gistdata.div)
+	              	$('<link />',{
+	              		'media':'screen',
+	              		'rel':'stylesheet',
+	              		'href':gistdata.stylesheet
+	              	}).appendTo('head');
+                     	$('#'+param).html(gistdata.div)
           	 		 
 	              }).error(function() {
 	            	 alert("error") 
