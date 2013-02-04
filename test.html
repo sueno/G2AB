@@ -3,44 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <!--<script src="./jquery-1.9.0.min.js"></script>-->
-        <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
-		<script src="http://code.jquery.com/jquery-migrate-1.0.0.min.js"></script>
+        <!--
+        <link href="./def.css" media="screen" rel="stylesheet" />
 
-		<script>
-		$(window).load(function(){
-		  $('div' + '.amebloGist').each(function(){
-		    var param = $(this).attr('id');
-		    if(param && param.match(/^[0-9]*$/)){
-            	var giturl = 'https://gist.github.com/'+param+'.json'
-	            $.ajax({
-	                url: giturl,
-	                type: 'GET',
-	                dataType: 'jsonp'
-	              }).success(function(gistdata) {
-                     var gistlink = document.createElement("link");
-	            	  gistlink.href = gistdata.stylesheet
-	            	  gistlink.media = "screen"
-	            	  gistlink.rel = "stylesheet"
-	                 document.head.appendChild(gistlink);
-          	 		 $('#'+param).html(gistdata.div)
-          	 		 
-	              }).error(function() {
-	            	 alert("error") 
-	              });
-		    }else{
-		      notice(param, "Illigal parameter.");
-		    }
-		  });
-		});
-		
-		</script>
+        -->
+        <script src="http://www.google.com/jsapi"></script>
+        <script>google.load('jquery','1')</script>
+        <script>(function(j){j(function(){$=jQuery=j})})($)</script>
+        <script src="./g2ab.js"></script>
+
+        <script type="text/javascript">
+
+        </script>
+
+        <style type="text/css">
+
+        </style>
 
     </head>
     <body>
-    
-    <div class="amebloGist" id="4682479"></div>
-    
+        <!--
+        <canvas id="loading"></canvas>
+        <div class="amebloGist" id="4666997"></div>
+        <div class="amebloGist" id="4682479"></div>
+        -->
+        <hr>
+
+        <div class="amebloGist" id="4666997"></div>
     </body>
 </html>
 
